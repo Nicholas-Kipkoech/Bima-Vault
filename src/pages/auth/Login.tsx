@@ -8,14 +8,19 @@ const Login = () => {
     <div className="h-screen">
       <div className="flex">
         <div
-          className="w-1/3"
+          className="w-1/3 flex flex-col justify-start"
           style={{
             backgroundImage: ` url(${WanjaIcon})`,
             backgroundRepeat: 'inherit',
             backgroundSize: 'contain',
           }}
         >
-          <img src={VaultLogo} className="mt-2 h-[100px] w-[150px] p-[5px] " />
+          <img
+            src={VaultLogo}
+            height={120}
+            width={150}
+            className="top-56  mt-[-40px] p-[5px] "
+          />
         </div>
         <div className="w-2/3  flex flex-col">
           <div className="items-center flex justify-center h-screen">
