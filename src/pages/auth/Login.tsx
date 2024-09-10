@@ -47,7 +47,7 @@ const Login = () => {
               <Button className="w-[370px] h-[48px] bg-[#cb7529]">
                 Sign In
               </Button>
-              <div className="relative w-[370px] my-3">
+              {/* <div className="relative w-[370px] my-3">
                 <div className="absolute inset-0 flex items-center ">
                   <span className="w-full border-t"></span>
                 </div>
@@ -56,8 +56,8 @@ const Login = () => {
                     or
                   </span>
                 </div>
-              </div>
-              <div className="flex justify-between w-[370px] gap-2">
+              </div> */}
+              {/* <div className="flex justify-between w-[370px] gap-2">
                 <div className="border w-[8rem] h-8 flex items-center justify-center rounded-md">
                   <img src={GoogleIcon} className="h-[15px] w-[30px]" />
                   <span className="text-[12px]">Google</span>
@@ -70,7 +70,7 @@ const Login = () => {
                   <img src={MicrosoftIcon} className="h-[12px] w-[30px]" />
                   <span className="text-[12px]">Microsoft</span>
                 </div>
-              </div>
+              </div> */}
               <div className="flex flex-col justify-end mt-[80px]">
                 <div className="text-[14px]">
                   <span className="text-slate-500">
