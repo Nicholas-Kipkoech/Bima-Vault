@@ -1,14 +1,12 @@
 import { Button } from '@/components/ui/button'
 import { FaEye } from 'react-icons/fa'
-import FacebookIcon from '../../../src/assets/facebook.svg'
-import GoogleIcon from '../../../src/assets/google.svg'
-import MicrosoftIcon from '../../../src/assets/microsoft.svg'
 import WanjaIcon from '../../../src/assets/wanjaIcon.jpg'
+import VaultLogo from '../../../src/assets/VaultLogo.png'
 
 const Login = () => {
   return (
-    <div className="  mx-[20px] h-screen">
-      <div className="flex ">
+    <div className="h-screen">
+      <div className="flex">
         <div
           className="w-1/3"
           style={{
@@ -17,16 +15,10 @@ const Login = () => {
             backgroundSize: 'contain',
           }}
         >
-          First Section
+          <img src={VaultLogo} className="mt-2 h-[100px] w-[150px] p-[5px] " />
         </div>
         <div className="w-2/3  flex flex-col">
-          <div className="flex justify-between">
-            <p></p>
-            <p className="flex justify-end items-end">
-              Don’t have an account? Sign Up
-            </p>
-          </div>
-          <div className="items-center flex justify-center h-[96vh]">
+          <div className="items-center flex justify-center h-screen">
             <div className="flex flex-col gap-4 w-[418px] ">
               <span className="text-[24px] font-bold">Sign In</span>
 
@@ -38,6 +30,7 @@ const Login = () => {
                 <input
                   placeholder="Password"
                   className="outline-none h-10 w-full"
+                  type="password"
                 />
                 <FaEye className="mr-2" />
               </div>
