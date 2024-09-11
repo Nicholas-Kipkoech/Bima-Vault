@@ -2,6 +2,8 @@ import { IoMdMenu } from 'react-icons/io'
 import { MdDashboard } from 'react-icons/md'
 import { useLocation } from 'react-router-dom'
 import VaultLogo from './../assets/VaultLogo.png'
+import { Switch } from '@/components/ui/switch'
+import { FcParallelTasks } from 'react-icons/fc'
 
 const MENUS = [
   {
@@ -11,7 +13,7 @@ const MENUS = [
   },
   {
     name: 'My Tasks',
-    icon: <MdDashboard />,
+    icon: <FcParallelTasks color="#0000" />,
     active: 'tasks',
   },
   {
@@ -56,15 +58,15 @@ const Sidebar = () => {
 
   return (
     <div className="bg-white h-screen">
-      <div className="border max-h-[3.6rem] bg-white flex items-center">
-        <IoMdMenu />
+      <div className="border max-h-[3.6rem] pl-4 bg-white flex items-center">
+        <IoMdMenu size={20} />
         <img src={VaultLogo} height={80} width={100} />
       </div>
       <div className="flex items-center flex-col justify-center gap-1 mt-4">
         {MENUS.slice(0, 3).map((menu, idx) => (
           <div
             className={`flex items-center gap-1 w-full pl-4 h-10 cursor-pointer ${
-              pathname === menu.active ? 'bg-slate-400 font-bold' : ''
+              pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
             }  `}
             key={idx}
           >
@@ -77,7 +79,7 @@ const Sidebar = () => {
         {MENUS.slice(3, 8).map((menu, idx) => (
           <div
             className={`flex items-center gap-1 w-full pl-4 h-10 cursor-pointer  ${
-              pathname === menu.active ? 'bg-slate-400 font-bold' : ''
+              pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
             }  `}
             key={idx}
           >
@@ -90,7 +92,7 @@ const Sidebar = () => {
         {MENUS.slice(8).map((menu, idx) => (
           <div
             className={`flex items-center gap-1 w-full pl-4 h-10 cursor-pointer  ${
-              pathname === menu.active ? 'bg-slate-400 font-bold' : ''
+              pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
             }  `}
             key={idx}
           >
@@ -98,6 +100,9 @@ const Sidebar = () => {
             <span>{menu.name}</span>
           </div>
         ))}
+      </div>
+      <div>
+        <Switch />
       </div>
     </div>
   )
