@@ -2,8 +2,14 @@ import { Button } from '@/components/ui/button'
 import { FaEye } from 'react-icons/fa'
 import WanjaIcon from '../../../src/assets/wanjaIcon.jpg'
 import VaultLogo from '../../../src/assets/VaultLogo.png'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate = useNavigate()
+  const handleLogin = async () => {
+    navigate('/home')
+  }
+
   return (
     <div className="h-screen">
       <div className="flex">
@@ -42,33 +48,13 @@ const Login = () => {
               <a href="" className="text-[14px] text-blue-600 my-[5px]">
                 Forgot password?
               </a>
-              <Button className="w-[370px] h-[48px] bg-[#cb7529]">
+              <Button
+                className="w-[370px] h-[48px] bg-[#cb7529]"
+                onClick={handleLogin}
+              >
                 Sign In
               </Button>
-              {/* <div className="relative w-[370px] my-3">
-                <div className="absolute inset-0 flex items-center ">
-                  <span className="w-full border-t"></span>
-                </div>
-                <div className="relative flex justify-center text-xs ">
-                  <span className="bg-background px-2 text-muted-foreground">
-                    or
-                  </span>
-                </div>
-              </div> */}
-              {/* <div className="flex justify-between w-[370px] gap-2">
-                <div className="border w-[8rem] h-8 flex items-center justify-center rounded-md">
-                  <img src={GoogleIcon} className="h-[15px] w-[30px]" />
-                  <span className="text-[12px]">Google</span>
-                </div>
-                <div className="border w-[8rem] h-8 flex items-center justify-center rounded-md">
-                  <img src={FacebookIcon} className="h-[20px] w-[30px]" />
-                  <span className="text-[12px]">Facebook</span>
-                </div>
-                <div className="border w-[8rem] h-8 flex items-center justify-center rounded-md">
-                  <img src={MicrosoftIcon} className="h-[12px] w-[30px]" />
-                  <span className="text-[12px]">Microsoft</span>
-                </div>
-              </div> */}
+
               <div className="flex flex-col justify-end mt-[80px]">
                 <div className="text-[14px]">
                   <span className="text-slate-500">
