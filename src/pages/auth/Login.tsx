@@ -37,7 +37,7 @@ const Login = () => {
                 placeholder="Email address"
                 className="outline-none border h-[48px] w-[370px] rounded-md px-2"
               />
-              <div className="flex w-[370px] h-[48px] mt-2 border items-center  rounded-md px-2">
+              <div className="flex w-[370px] h-[48px] bg-white mt-2 border items-center  rounded-md px-2">
                 <input
                   placeholder="Password"
                   className="outline-none h-10 w-full"
@@ -56,13 +56,12 @@ const Login = () => {
               </Button>
 
               <div className="flex flex-col justify-end mt-[80px]">
-                <div className="text-[14px]">
+                <div className="text-[13.2px]">
                   <span className="text-slate-500">
                     Protected by reCAPTCHA and subject to ICON’s
                   </span>{' '}
                   <strong>Privacy Policy</strong>
                   <br />
-                  <span>and</span> <strong>Terms of Service</strong>
                 </div>
               </div>
             </div>

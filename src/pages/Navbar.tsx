@@ -19,8 +19,8 @@ const Navbar = () => {
             </Avatar>
           </div>
           <div className="flex flex-col ml-2">
-            <span className="font-bold">Nicholas Kipkoech</span>
-            <span className="text-[gray]">Claims Officer</span>
+            <span className="font-bold text-[14px]">Nicholas Kipkoech</span>
+            <span className="text-[gray] text-[12px]">Claims Officer</span>
           </div>
         </div>
       </div>

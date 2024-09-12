@@ -32,11 +32,6 @@ const MENUS = [
     active: 'perfomance',
   },
   {
-    name: 'Allocations',
-    icon: <MdDashboard />,
-    active: 'allocations',
-  },
-  {
     name: 'My Reports',
     icon: <MdDashboard />,
     active: 'reports',
@@ -58,51 +53,30 @@ const Sidebar = () => {
 
   return (
     <div className="bg-white h-screen">
-      <div className="border max-h-[3.6rem] pl-4 bg-white flex items-center">
-        <IoMdMenu size={20} />
-        <img src={VaultLogo} height={80} width={100} />
-      </div>
-      <div className="flex items-center flex-col justify-center gap-1 mt-4">
-        {MENUS.slice(0, 3).map((menu, idx) => (
-          <div
-            className={`flex items-center gap-1 w-full pl-4 h-10 cursor-pointer ${
-              pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
-            }  `}
-            key={idx}
-          >
-            <div>{menu.icon}</div>
-            <span>{menu.name}</span>
+      <div className="flex flex-col justify-between pb-10 h-full">
+        <div>
+          <div className="border max-h-[3rem] pl-4 bg-white flex items-center">
+            <IoMdMenu size={20} />
+            <img src={VaultLogo} height={80} width={100} />
           </div>
-        ))}
-      </div>
-      <div className="flex items-center flex-col justify-center gap-1 mt-8">
-        {MENUS.slice(3, 8).map((menu, idx) => (
-          <div
-            className={`flex items-center gap-1 w-full pl-4 h-10 cursor-pointer  ${
-              pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
-            }  `}
-            key={idx}
-          >
-            <div>{menu.icon}</div>
-            <span>{menu.name}</span>
+          <div className="flex items-center flex-col justify-center gap-1  mt-4">
+            {MENUS.map((menu, idx) => (
+              <div
+                className={`flex items-center gap-1 w-full pl-4 h-8 cursor-pointer ${
+                  pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
+                }  `}
+                key={idx}
+              >
+                <div>{menu.icon}</div>
+                <span className="text-[14px]">{menu.name}</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="flex items-center flex-col justify-center gap-1 mt-8">
-        {MENUS.slice(8).map((menu, idx) => (
-          <div
-            className={`flex items-center gap-1 w-full pl-4 h-10 cursor-pointer  ${
-              pathname === menu.active ? 'bg-[#EDF5FF] font-bold' : ''
-            }  `}
-            key={idx}
-          >
-            <div>{menu.icon}</div>
-            <span>{menu.name}</span>
-          </div>
-        ))}
-      </div>
-      <div>
-        <Switch />
+        </div>
+        <div className="flex items-center gap-2 pl-4">
+          <span className="text-[14px]">Light mode</span>
+          <Switch />
+        </div>
       </div>
     </div>
   )
