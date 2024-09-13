@@ -1,9 +1,11 @@
 import { IoMdMenu } from 'react-icons/io'
-import { MdDashboard } from 'react-icons/md'
+import { MdDashboard, MdPermContactCalendar } from 'react-icons/md'
 import { useLocation } from 'react-router-dom'
 import VaultLogo from './../assets/VaultLogo.png'
 import { Switch } from '@/components/ui/switch'
 import { FcParallelTasks } from 'react-icons/fc'
+import { FaFileInvoiceDollar, FaPoll, FaRegCalendarCheck } from 'react-icons/fa'
+import { IoSettingsSharp } from 'react-icons/io5'
 
 const MENUS = [
   {
@@ -13,37 +15,33 @@ const MENUS = [
   },
   {
     name: 'My Tasks',
-    icon: <FcParallelTasks color="#0000" />,
+    icon: <FcParallelTasks color="gray" />,
     active: 'tasks',
   },
   {
     name: 'Document Viewer',
-    icon: <MdDashboard />,
+    icon: <MdPermContactCalendar color="gray" />,
     active: 'document-viewer',
   },
   {
     name: 'Calendar',
-    icon: <MdDashboard />,
+    icon: <FaRegCalendarCheck color="gray" />,
     active: 'calendar',
   },
   {
     name: 'Perfomance',
-    icon: <MdDashboard />,
+    icon: <FaFileInvoiceDollar color="gray" />,
     active: 'perfomance',
   },
   {
     name: 'My Reports',
-    icon: <MdDashboard />,
+    icon: <FaPoll color="gray" />,
     active: 'reports',
   },
-  {
-    name: 'My Company',
-    icon: <MdDashboard />,
-    active: 'company',
-  },
+
   {
     name: 'Settings',
-    icon: <MdDashboard />,
+    icon: <IoSettingsSharp color="gray" />,
     active: 'settings',
   },
 ]
