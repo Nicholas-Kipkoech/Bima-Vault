@@ -6,7 +6,7 @@ import { IoIosSearch } from 'react-icons/io'
 
 const Navbar = () => {
   return (
-    <div className="h-auto border bg-white">
+    <div className="h-auto border bg-white px-8">
       <div className="flex items-center justify-between ml-1 p-1">
         <div className="flex  items-center h-[2rem] w-[40rem] rounded-md">
           <IoIosSearch size={20} color="#444745" />

@@ -6,7 +6,7 @@ import Login from './pages/auth/Login.tsx'
 import ErrorPage from './pages/error/error-page.tsx'
 import App from './App.tsx'
 import Layout from './pages/Layout.tsx'
-import Tasks from './pages/Tasks.tsx'
+import Tasks from './pages/tasks/Tasks.tsx'
 
 const router = createBrowserRouter([
   {
