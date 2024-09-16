@@ -14,6 +14,7 @@ function App() {
             Here's what's going on with your Claims Department{' '}
           </span>
         </div>
+
         <div className="flex flex-col items-end">
           <span className="text-[20px] font-bold">Friday</span>
           <span className="text-[#969696] text-[14px]">15 Aug 2024</span>
@@ -29,7 +30,7 @@ function App() {
             <span className="text-[#969696]">Let's Edit...</span>
           </div>
         </div>
-        <Button className="bg-[#cb7529] h-[30px]">Get Started</Button>
+        <Button className="bg-[#cb7529] h-[30px]">Go to Viewer</Button>
       </div>
       <div className="flex w-full gap-2 mt-4">
         <div className="border rounded-md py-4 px-2 bg-white w-[70%]">
@@ -71,7 +72,7 @@ function App() {
                 2-step verification is the best way to keep your company's
                 account safe
               </p>
-              <span className="mt-2 text-[14px]">
+              <span className="text-[14px] font-[500]">
                 Enable 2 step verification &gt;{' '}
               </span>
             </div>
