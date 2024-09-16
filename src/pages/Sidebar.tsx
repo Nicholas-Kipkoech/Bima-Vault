@@ -1,6 +1,6 @@
 import { IoMdMenu } from 'react-icons/io'
 import { MdDashboard, MdPermContactCalendar } from 'react-icons/md'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import VaultLogo from './../assets/VaultLogo.png'
 import { Switch } from '@/components/ui/switch'
 import { FcParallelTasks } from 'react-icons/fc'
@@ -66,9 +66,7 @@ const Sidebar = () => {
                 key={idx}
               >
                 <div>{menu.icon}</div>
-                <a className="text-[14px]" href={menu.active}>
-                  {menu.name}
-                </a>
+                <Link to={`/${menu.active}`}>{menu.name}</Link>
               </div>
             ))}
           </div>
