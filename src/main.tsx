@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './pages/auth/Login.tsx'
 import ErrorPage from './pages/error/error-page.tsx'
 import App from './App.tsx'
 import Layout from './pages/Layout.tsx'
+import Tasks from './pages/Tasks.tsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +23,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <App />
+      </Layout>
+    ),
+  },
+  {
+    path: '/tasks',
+    element: (
+      <Layout>
+        <Tasks />
       </Layout>
     ),
   },

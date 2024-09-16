@@ -66,7 +66,9 @@ const Sidebar = () => {
                 key={idx}
               >
                 <div>{menu.icon}</div>
-                <span className="text-[14px]">{menu.name}</span>
+                <a className="text-[14px]" href={menu.active}>
+                  {menu.name}
+                </a>
               </div>
             ))}
           </div>
