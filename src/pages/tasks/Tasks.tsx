@@ -4,13 +4,9 @@ import { FaCircleExclamation } from 'react-icons/fa6'
 import Tabs from '@mui/joy/Tabs'
 import TabList from '@mui/joy/TabList'
 import Tab from '@mui/joy/Tab'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+import Select from '@mui/joy/Select'
+import Option from '@mui/joy/Option'
+
 import TasksTable from './Table'
 
 const TasksColumns = [
@@ -81,17 +77,16 @@ const Tasks = () => {
             ))}
           </TabList>
         </Tabs>
-        <Select>
-          <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder="Product" />
-          </SelectTrigger>
-          <SelectContent>
-            {Products.map((product, index) => (
-              <SelectItem value={product} key={index}>
-                {product}
-              </SelectItem>
-            ))}
-          </SelectContent>
+        <Select
+          defaultValue="dog"
+          className="w-[250px]"
+          placeholder="Select class"
+        >
+          {Products.map((product, key) => (
+            <Option value={product} key={key}>
+              {product}
+            </Option>
+          ))}
         </Select>
       </div>
       <div>
