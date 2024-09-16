@@ -17,13 +17,13 @@ const Navbar = () => {
           <div>
             <Popover>
               <PopoverTrigger asChild>
-                <Avatar className="bg-slate-600 border ">
+                <Avatar className="bg-slate-600 border">
                   <AvatarImage src="https://avatars.githubusercontent.com/u/58167221?v=4" />
                   <AvatarFallback>NK</AvatarFallback>
                 </Avatar>
               </PopoverTrigger>
               <PopoverContent>
-                <div className="flex flex-col gap-2 border bg-white rounded-md  p-3 text-[14px] w-[12rem]">
+                <div className="flex flex-col   bg-white rounded-md  p-3 text-[14px] w-[12rem]">
                   <div className="h-8 hover:bg-[#EDF4FE] flex items-center rounded-md pl-2">
                     <span>Settings</span>
                   </div>
