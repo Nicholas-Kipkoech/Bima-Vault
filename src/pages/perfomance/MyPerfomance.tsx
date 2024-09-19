@@ -2,6 +2,17 @@ import { Button } from '@/components/ui/button'
 import { GoArrowDownRight, GoArrowUpRight } from 'react-icons/go'
 
 import React from 'react'
+import { DepartmentCharts } from './Charts'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+import { AvgPerfomanceChart } from './AvgPerfomanceChart'
+import { ApprovalMatrixChart } from './ApprovalMatrixCharts'
 
 interface IPerfomanceCustomCard {
   name: string
@@ -71,7 +82,61 @@ const MyPerfomance = () => {
         />
         <CustomCard name="Kpi's" count={'85.45%'} percentage={'+2.67%'} />
       </div>
-      <div className="bg-white"></div>
+      <div className="bg-white mt-4 rounded-md p-2">
+        <span className="font-bold text-[14px]">Documents Per Department</span>
+        <div className="flex gap-10">
+          <DepartmentCharts />
+          <div>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[200px] ">Department</TableHead>
+                  <TableHead>New</TableHead>
+                  <TableHead>Total</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="flex items-center gap-2">
+                    <span className="h-[10px] border w-[10px] bg-green-500"></span>
+                    <span>Account</span>
+                  </TableCell>
+                  <TableCell>12,202</TableCell>
+                  <TableCell>55.2k</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="flex items-center gap-2">
+                    <span className="h-[10px] border w-[10px] bg-[#092332]"></span>
+                    <span>Finance Manager</span>
+                  </TableCell>
+                  <TableCell>12,202</TableCell>
+                  <TableCell>55.2k</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="flex items-center gap-2">
+                    <span className="h-[10px] border w-[10px] bg-[#FC0000]"></span>
+                    <span>Upper Management</span>
+                  </TableCell>
+                  <TableCell>12,202</TableCell>
+                  <TableCell>55.2k</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="flex items-center gap-2">
+                    <span className="h-[10px] border w-[10px] bg-gray-700"></span>
+                    <span>Reinsurance</span>
+                  </TableCell>
+                  <TableCell>12,202</TableCell>
+                  <TableCell>55.2k</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+      <div className="mt-4 flex gap-2 ">
+        <AvgPerfomanceChart />
+        <ApprovalMatrixChart />
+      </div>
     </div>
   )
 }
