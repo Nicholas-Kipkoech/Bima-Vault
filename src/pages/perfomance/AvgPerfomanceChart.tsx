@@ -61,7 +61,7 @@ export function AvgPerfomanceChart() {
 
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent  />}
+              content={<ChartTooltipContent />}
             />
             <Bar dataKey="desktop" fill="#092332" barSize={10} />
           </BarChart>

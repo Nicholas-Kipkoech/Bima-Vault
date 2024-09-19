@@ -1,7 +1,7 @@
 import React from 'react'
 
 const DocumentViewer: React.FC<{}> = () => {
-  return <div>Work in progress</div>
+  return <div>Page under construction</div>
 }
 
 export default DocumentViewer
