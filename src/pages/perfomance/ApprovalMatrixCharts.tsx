@@ -51,7 +51,7 @@ export function ApprovalMatrixChart() {
         </div>
       </div>
       <CardContent>
-        <ChartContainer config={chartConfig} className="h-[200px]">
+        <ChartContainer config={chartConfig} className="h-[200px] w-full">
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
