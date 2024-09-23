@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/table'
 import { AvgPerfomanceChart } from './AvgPerfomanceChart'
 import { ApprovalMatrixChart } from './ApprovalMatrixCharts'
+import { AvgPerfomanceChart2 } from './AvgPerfomanceChart2'
 
 interface IPerfomanceCustomCard {
   name: string
@@ -27,13 +28,13 @@ const CustomCard: React.FC<IPerfomanceCustomCard> = ({
 }) => {
   const color = String(percentage).startsWith('-') ? 'red' : '#1EAD41'
   return (
-    <div className="bg-white p-2 px-4 w-[15.2rem] h-[5rem] rounded-md">
+    <div className="bg-white p-2 px-4 md:w-[15.2rem] md:h-[5rem] rounded-md xl:w-[24rem] xl:h-[8rem]">
       <div className="flex flex-col justify-between gap-6">
-        <span className="font-[500] text-[14px]">{name}</span>
+        <span className="font-[500] xl:text-[20px]">{name}</span>
         <div className="flex justify-between">
-          <span className="font-bold">{count}</span>
+          <span className="font-bold xl:text-[20px]">{count}</span>
           <div className="flex gap-1 items-center">
-            <span style={{ color: color }} className="text-[12px]">
+            <span style={{ color: color }} className="xl:text-[16px]">
               {percentage}
             </span>
             {String(percentage).startsWith('-') ? (
@@ -133,9 +134,67 @@ const MyPerfomance = () => {
           </div>
         </div>
       </div>
-      <div className="mt-4 flex gap-2 ">
+      <div className="mt-4 grid grid-cols-2 gap-2 ">
         <AvgPerfomanceChart />
         <ApprovalMatrixChart />
+        <AvgPerfomanceChart2 />
+        <div className="border bg-white rounded-md">
+          <div className="flex justify-between p-[10px]">
+            <span className="ml-[20px] font-bold">Perfomance</span>
+            <span>This Month</span>
+          </div>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[200px] ">Department</TableHead>
+                <TableHead>Amount</TableHead>
+                <TableHead>%</TableHead>
+                <TableHead>Total</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="flex items-center gap-2">
+                  <span className="h-[10px] border w-[10px] bg-green-500"></span>
+                  <span>Accounting</span>
+                </TableCell>
+                <TableCell>12,202</TableCell>
+                <TableCell>10%</TableCell>
+                <TableCell>55.2k</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="flex items-center gap-2">
+                  <span className="h-[10px] border w-[10px] bg-[#092332]"></span>
+                  <span>Finance </span>
+                </TableCell>
+                <TableCell>12,202</TableCell>
+                <TableCell>10%</TableCell>
+
+                <TableCell>55.2k</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="flex items-center gap-2">
+                  <span className="h-[10px] border w-[10px] bg-[#FC0000]"></span>
+                  <span>Upper Management</span>
+                </TableCell>
+                <TableCell>12,202</TableCell>
+                <TableCell>10%</TableCell>
+
+                <TableCell>55.2k</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="flex items-center gap-2">
+                  <span className="h-[10px] border w-[10px] bg-gray-700"></span>
+                  <span>Reinsurance</span>
+                </TableCell>
+                <TableCell>12,202</TableCell>
+                <TableCell>10%</TableCell>
+
+                <TableCell>55.2k</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
       </div>
     </div>
   )

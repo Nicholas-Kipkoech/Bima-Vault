@@ -51,7 +51,7 @@ export function DepartmentCharts() {
       <CardContent className="flex-1 pb-0 h-[100px]">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square h-[200px]"
+          className="mx-auto aspect-square h-[250px]"
         >
           <PieChart>
             <ChartTooltip
@@ -62,7 +62,7 @@ export function DepartmentCharts() {
               data={chartData}
               dataKey="visitors"
               nameKey="browser"
-              innerRadius={60}
+              innerRadius={80}
               strokeWidth={4}
             >
               <Label
