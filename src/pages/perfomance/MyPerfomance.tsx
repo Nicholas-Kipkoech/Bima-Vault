@@ -28,13 +28,17 @@ const CustomCard: React.FC<IPerfomanceCustomCard> = ({
 }) => {
   const color = String(percentage).startsWith('-') ? 'red' : '#1EAD41'
   return (
-    <div className="bg-white p-2 px-4 md:w-[15.2rem] md:h-[5rem] rounded-md xl:w-[24rem] xl:h-[8rem]">
+    <div className="bg-white p-2 px-4 md:w-[15.2rem] md:h-[5rem] rounded-md 2xl:w-[24rem] 2xl:h-[8rem]">
       <div className="flex flex-col justify-between gap-6">
-        <span className="font-[500] xl:text-[20px]">{name}</span>
+        <span className="font-[500] md:text-[15px] 2xl:text-[20px]">
+          {name}
+        </span>
         <div className="flex justify-between">
-          <span className="font-bold xl:text-[20px]">{count}</span>
+          <span className="font-bold md:text-[15px] xl:text-[20px]">
+            {count}
+          </span>
           <div className="flex gap-1 items-center">
-            <span style={{ color: color }} className="xl:text-[16px]">
+            <span style={{ color: color }} className="2xl:text-[16px]">
               {percentage}
             </span>
             {String(percentage).startsWith('-') ? (
