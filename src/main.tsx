@@ -10,6 +10,7 @@ import Tasks from './pages/tasks/Tasks.tsx'
 import DocumentViewer from './pages/document-viewer/DocumentViewer.tsx'
 import Calendar from './pages/calendar/Calendar.tsx'
 import MyPerfomance from './pages/perfomance/MyPerfomance.tsx'
+import Settings from './pages/settings/Settings.tsx'
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
         <MyPerfomance />
       </Layout>
     ),
+  },
+  {
+    path: '/settings',
+    element: <Settings />,
   },
 ])
 
