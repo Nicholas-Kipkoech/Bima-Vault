@@ -61,7 +61,7 @@ const Settings: React.FC<{}> = () => {
                 src="https://avatars.githubusercontent.com/u/58167221?v=4"
                 className="border md:h-[60px] md:w-[60px] 2xl:h-[100px] 2xl:w-[100px] rounded-[50%] p-1"
               />
-              <div className="flex justify-between gap-2 w-full">
+              <div className="flex justify-between items-center gap-2 w-full">
                 <div>
                   <div className="flex gap-4">
                     <span className="font-bold">Nicholas Kipkoech</span>
@@ -74,9 +74,6 @@ const Settings: React.FC<{}> = () => {
                 <div className="flex flex-col">
                   <span className="flex justify-end font-bold">
                     Enterprise Account
-                  </span>
-                  <span className="text-slate-600">
-                    Activated on Dec 09, 2025
                   </span>
                 </div>
               </div>
