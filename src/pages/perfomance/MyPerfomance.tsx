@@ -28,7 +28,7 @@ const CustomCard: React.FC<IPerfomanceCustomCard> = ({
 }) => {
   const color = String(percentage).startsWith('-') ? 'red' : '#1EAD41'
   return (
-    <div className="bg-white p-2 px-4 md:w-[15.2rem] md:h-[5rem] rounded-md 2xl:w-[24rem] 2xl:h-[8rem]">
+    <div className="bg-white p-2 px-4 md:w-[15.2rem] md:h-[6rem] rounded-md 2xl:w-[24rem] 2xl:h-[8rem]">
       <div className="flex flex-col justify-between gap-6">
         <span className="font-[500] md:text-[15px] 2xl:text-[20px]">
           {name}
