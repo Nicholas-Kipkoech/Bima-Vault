@@ -53,9 +53,14 @@ const Sidebar = () => {
     <div className="bg-white h-screen">
       <div className="flex flex-col justify-between pb-10 h-full">
         <div>
-          <div className="border max-h-[3rem] pl-4 bg-white flex items-center">
+          <div className="border max-h-[3rem] w-full  bg-white flex items-center">
             <IoMdMenu size={20} />
-            <img src={VaultLogo} height={80} width={100} />
+            <img
+              src={VaultLogo}
+              height={80}
+              width={100}
+              className="h-full w-full"
+            />
           </div>
           <div className="flex items-center flex-col justify-center gap-1  mt-4">
             {MENUS.map((menu, idx) => (

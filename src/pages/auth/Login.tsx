@@ -3,11 +3,32 @@ import { FaEye } from 'react-icons/fa'
 import WanjaIcon from '../../../src/assets/wanjaIcon.jpg'
 import VaultLogo from '../../../src/assets/VaultLogo.png'
 import { useNavigate } from 'react-router-dom'
-
+import axios from 'axios'
+import { BASE_URL } from '@/constants'
+import { useState } from 'react'
+import { FaEyeSlash } from 'react-icons/fa6'
 const Login = () => {
   const navigate = useNavigate()
+  const [request, setRequest] = useState({
+    username: '',
+    password: '',
+  })
+  const [isPassword, setIsPassword] = useState(true)
+  const [loading, setLoading] = useState(false)
   const handleLogin = async () => {
-    navigate('/home')
+    setLoading(true)
+    try {
+      const { data } = await axios.post(`${BASE_URL}/user/login`, {
+        username: request.username,
+        password: request.password,
+      })
+      if (data.success) {
+        navigate('/home')
+      }
+    } catch (error) {
+      setLoading(false)
+      console.error(error)
+    }
   }
 
   return (
@@ -34,25 +55,44 @@ const Login = () => {
               <span className="text-[24px] font-bold">Sign In</span>
 
               <input
-                placeholder="Email address"
+                placeholder="Username"
                 className="outline-none border h-[48px] w-[370px] rounded-md px-2"
+                value={request.username}
+                onChange={(e) =>
+                  setRequest({ ...request, username: e.target.value })
+                }
               />
               <div className="flex w-[370px] h-[48px] bg-white mt-2 border items-center  rounded-md px-2">
                 <input
                   placeholder="Password"
                   className="outline-none h-10 w-full"
-                  type="password"
+                  type={isPassword ? 'password' : 'text'}
+                  value={request.password}
+                  onChange={(e) =>
+                    setRequest({ ...request, password: e.target.value })
+                  }
                 />
-                <FaEye className="mr-2" />
+                {isPassword ? (
+                  <FaEye
+                    className="mr-2"
+                    onClick={() => setIsPassword(false)}
+                  />
+                ) : (
+                  <FaEyeSlash
+                    className="mr-2"
+                    onClick={() => setIsPassword(true)}
+                  />
+                )}
               </div>
               <a href="" className="text-[14px] text-blue-600 my-[5px]">
                 Forgot password?
               </a>
               <Button
+                disabled={loading}
                 className="w-[370px] h-[48px] bg-[#cb7529]"
                 onClick={handleLogin}
               >
-                Sign In
+                {loading ? 'Signing In' : 'Sign In'}
               </Button>
 
               <div className="flex flex-col justify-end mt-[80px]">
