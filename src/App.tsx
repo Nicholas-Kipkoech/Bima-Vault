@@ -16,7 +16,9 @@ function App() {
         </div>
 
         <div className="flex flex-col items-end">
-          <span className="text-[20px] font-bold">Friday</span>
+          <span className="text-[20px] font-bold">
+            {new Date(Date.now()).toDateString().split(' ')[0]}
+          </span>
           <span className="text-[#969696] text-[14px]">15 Aug 2024</span>
         </div>
       </div>

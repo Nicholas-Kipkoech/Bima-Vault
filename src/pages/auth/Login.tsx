@@ -23,6 +23,7 @@ const Login = () => {
         password: request.password,
       })
       if (data.success) {
+        localStorage.setItem('token', data?.accessToken)
         navigate('/home')
       }
     } catch (error) {

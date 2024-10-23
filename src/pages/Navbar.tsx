@@ -1,10 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Popover, PopoverTrigger } from '@/components/ui/popover'
 import { PopoverContent } from '@radix-ui/react-popover'
+import { useEffect, useState } from 'react'
 import { FaBell } from 'react-icons/fa'
 import { IoIosSearch } from 'react-icons/io'
+import { jwtDecode } from 'jwt-decode'
 
 const Navbar = () => {
+  const [user, setUser] = useState<any>({})
+
+  function getUser() {
+    if (typeof window !== 'undefined') {
+      const decodedUser = jwtDecode(localStorage.getItem('token') as string)
+      setUser(decodedUser)
+    }
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
+  console.log(user)
   return (
     <div className="h-auto border bg-white px-8">
       <div className="flex items-center justify-between ml-1 p-1">
@@ -41,8 +57,10 @@ const Navbar = () => {
             </Popover>
           </div>
           <div className="flex flex-col ml-2">
-            <span className="font-bold text-[14px]">Nicholas Kipkoech</span>
-            <span className="text-[gray] text-[12px]">Claims Officer</span>
+            <span className="font-bold text-[14px]">
+              {user && user.entName ? user.entName : user.orgDesc}
+            </span>
+            <span className="text-[gray] text-[12px]">{user.sysProfile}</span>
           </div>
         </div>
       </div>
